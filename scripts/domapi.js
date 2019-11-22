@@ -24,7 +24,18 @@ function main() { //(2:36:)
         newP.innerText = "Lorem " +i;
         myApp.appendChild(newP);
     }
+    setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
+    //if we want to delete immediately: deleteAllChildren('#app-1'); //(0:30:)
 }
+
+function deleteAllChildren(selector) {  //(0:29:)
+    const element = document.querySelector(selector)
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+    console.log("All children should be ---");
+}
+
 
 main(); //(2:36:)
 
