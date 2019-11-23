@@ -7,15 +7,19 @@ const CFG = {   //W4D1 (0:39:) CFG - config
 
 function main() { //(2:36:)
     //first we find the element that we will add new elements (2:14:)
-    const myApp = document.getElementById("app-1");
-    //const MAXPAR = 10 //(2:30:)
-    //we can style the element
-    myApp.style.backgroundColor = "aqua";
-    myApp.style.height = "70vh";
+    const myApp = styleMainParent("#app-1");         //W4D1 (0:52:) changed radicaly
 
     createChildren("#app-1");
     setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
     //if we want to delete immediately: deleteAllChildren('#app-1'); //(0:30:)
+}
+
+function styleMainParent(selector, mystyle) {        //W4D1 (0:48:)
+    //const myApp = document.getElementById("app-1");
+    const myApp = document.querySelector(selector);
+    myApp.style.backgroundColor = "aqua";
+    myApp.style.height = "70vh";
+    return myApp;
 }
 
 function createChildren(selector){    //(0:36:)
