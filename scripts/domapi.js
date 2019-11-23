@@ -22,8 +22,12 @@ function main() { //W3D5(2:36:)
     //adding Event Handlers  v3                               //W4D1 (1:40:)
     document.querySelector('#btn-V3').onclick = onBtnV3;
     //arrow syntax example on adding handler underneath
-    //adding Event Handlers  v4                               //W4D1 (1:42:)
-    document.querySelector('#random-btn').onclick = () => {console.log("Random was clicked");};
+    //adding Event Handlers  v4                               //W4D1 (1:42:)(2:17)
+    document.querySelector('#random-btn').onclick = (event) => {
+        console.log("Random was clicked");
+        //event.target gets me the element responsible for firing the event
+        event.target.innerText = "R"+Math.floor(Math.random()*100); //W4D1 (2:19)
+    };
     //addEventListener for adding multiple function callbacks
     //adding Event Handlers  v5(v3 pēc VS)                    //W4D1 (1:45:)
     const myUpdateBtn = document.querySelector('#update-btn');
