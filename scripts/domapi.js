@@ -21,6 +21,9 @@ function main() { //W3D5(2:36:)
     myResetBtn.onclick = onResetBtnClick;
     //adding Event Handlers  v3                               //W4D1 (1:40:)
     document.querySelector('#btn-V3').onclick = onBtnV3;
+    //arrow syntax example on adding handler underneath
+    //adding Event Handlers  v4                               //W4D1 (1:42:)
+    document.querySelector('#random-btn').onclick = () => {console.log("Random was clicked");};
 }
 
 function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
