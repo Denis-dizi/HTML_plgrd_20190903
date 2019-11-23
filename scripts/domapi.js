@@ -24,6 +24,9 @@ function main() { //W3D5(2:36:)
     //arrow syntax example on adding handler underneath
     //adding Event Handlers  v4                               //W4D1 (1:42:)
     document.querySelector('#random-btn').onclick = () => {console.log("Random was clicked");};
+    //adding Event Handlers  v5(v3 pēc VS)                    //W4D1 (1:45:)
+    const myUpdateBtn = document.querySelector('#update-btn');
+    myUpdateBtn.addEventListener('click', () => {console.log("Updating");});
 }
 
 function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
