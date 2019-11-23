@@ -4,7 +4,7 @@
 const CFG = {                                           //W4D1 (0:39:) CFG - config
     MAXPAR : 5,
     backgroundColor: "aqua",
-    height: "70vh"
+    height: "50vh"
 }
 
 function main() { //W3D5(2:36:)
@@ -28,6 +28,23 @@ function main() { //W3D5(2:36:)
         //event.target gets me the element responsible for firing the event
         event.target.innerText = "R"+Math.floor(Math.random()*100); //W4D1 (2:19)
     };
+
+    document.querySelector('#app-1').onclick = (event) => { //W4D1 (2:23)
+        console.log("You clicked my app div "+event.target.id);
+    }
+
+    document.querySelector('#p-2').onclick = (event) => { //W4D1 (2:25)
+        console.log("You clicked paragraph "+event.target.id);
+    }
+
+    //example on how to stop bubbling up
+    document.querySelector('#p-3').onclick = (event) => { //W4D1 (2:31)
+        console.log("You clicked paragraph "+event.target.id);
+        console.log("Stoping bubbling (propagation) toward parent");
+        event.stopPropagation();
+    }
+
+
     //addEventListener for adding multiple function callbacks
     //adding Event Handlers  v5(v3 pēc VS)                    //W4D1 (1:45:)
     const myUpdateBtn = document.querySelector('#update-btn');
@@ -40,12 +57,13 @@ function main() { //W3D5(2:36:)
         console.log("You pressed key: "+ event.code);
         console.log("Keycode is: "+ event.key);
     }
-
+    /*
+    //mouse event hendler
     //document.onmousemove = (event) => {                        //W4D1 (2:12:)
     document.querySelector('#app-1').onmousemove = (event) => {  //W4D1 (2:15:)
         console.log("Mouse X: "+ event.clientX);
         console.log("Mouse Y: "+ event.clientY);
-    }
+    }*/
 
 }
 
