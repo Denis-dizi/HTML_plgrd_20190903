@@ -19,6 +19,8 @@ function main() { //W3D5(2:36:)
     //adding Event Handlers  v2                               //W4D1 (1:37:)
     const myResetBtn = document.querySelector('#reset-btn');
     myResetBtn.onclick = onResetBtnClick;
+    //adding Event Handlers  v3                               //W4D1 (1:40:)
+    document.querySelector('#btn-V3').onclick = onBtnV3;
 }
 
 function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
@@ -80,6 +82,10 @@ function onButtonClickDelete() {
 function onResetBtnClick() { //W4D1 (1:35:)
     console.log("A 'Reset' button was clicked");
     //alert('do You wana to Reset?!');
+}
+function onBtnV3() { //W4D1 (1:40:)
+    console.log("BtnV3 was clicked");
+    //alert(' ');
 }
 
 
