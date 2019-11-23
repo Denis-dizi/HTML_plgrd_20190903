@@ -37,7 +37,8 @@ function main() { //W3D5(2:36:)
         console.log("Keycode is: "+ event.key);
     }
 
-    document.onmousemove = (event) => {                        //W4D1 (2:12:)
+    //document.onmousemove = (event) => {                        //W4D1 (2:12:)
+    document.querySelector('#app-1').onmousemove = (event) => {  //W4D1 (2:15:)
         console.log("Mouse X: "+ event.clientX);
         console.log("Mouse Y: "+ event.clientY);
     }
