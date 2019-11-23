@@ -2,7 +2,7 @@
 //W3D5 (2:13:) W4D1 (0:29:)
 
 const CFG = {   //W4D1 (0:39:) CFG - config
-    MAXPAR : 10
+    MAXPAR : 5
 }
 
 function main() { //(2:36:)
@@ -13,6 +13,13 @@ function main() { //(2:36:)
     myApp.style.backgroundColor = "aqua";
     myApp.style.height = "70vh";
 
+    createChildren("#app-1");
+    setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
+    //if we want to delete immediately: deleteAllChildren('#app-1'); //(0:30:)
+}
+
+function createChildren(selector){    //(0:36:)
+    const parent = document.querySelector(selector);
     //we can add new elements (children) (2:17:)
     //first we create a new element NOT attached to anything
     /* before changing to "for loop"
@@ -27,14 +34,8 @@ function main() { //(2:36:)
         newP.style.fontSize = 15 + i*3 + "px"; //(2:46:)
         newP.style.backgroundColor = "hsl("+(i*360/CFG.MAXPAR)+", 30%, 40%)" //(2:33:)
         newP.innerText = "Lorem " +i;
-        myApp.appendChild(newP);
+        parent.appendChild(newP);
     }
-    setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
-    //if we want to delete immediately: deleteAllChildren('#app-1'); //(0:30:)
-}
-
-function createAllChildren(selector){    //(0:36:)
-    const parent = document.querySelector(selector);
 }
 
 function deleteAllChildren(selector) {  //(0:29:)
