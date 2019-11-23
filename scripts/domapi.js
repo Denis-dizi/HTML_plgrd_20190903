@@ -12,7 +12,8 @@ function main() { //(2:36:)
     const myApp = styleMainParent("#app-1", CFG);  //W4D1 (0:52:) changed radicaly
 
     createChildren("#app-1");
-    setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
+    createPlainChild('body', 'footer');          //W4D1 (1:06:)
+    //setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
     //if we want to delete immediately: deleteAllChildren('#app-1'); //(0:30:)
 }
 
@@ -42,6 +43,12 @@ function createChildren(selector){    //(0:36:)
         newP.innerText = "Lorem " +i;
         parent.appendChild(newP);
     }
+}
+
+function createPlainChild (selector, tag) {   //W4D1 (1:03:)
+    const parent = document.querySelector(selector);  
+    const newElement = document.createElement(tag);
+    parent.appendChild(newElement)
 }
 
 function deleteAllChildren(selector) {  //(0:29:)
