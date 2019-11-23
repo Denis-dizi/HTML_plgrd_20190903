@@ -62,8 +62,16 @@ function deleteAllChildren(selector) {  //W3D5(0:29:)
 
 //Event Handlers (button click) //W4D1 (1:16:)
 function onButtonClick() {
-    console.log("A button was clicked");
+    console.log("A 'Click' button was clicked");
     //alert('You clicked Me?!');
+}
+function onButtonClickAdd() {
+    console.log("An 'Add' button was clicked");
+    //alert('You want to Add?!');
+}
+function onButtonClickDelete() {
+    console.log("A 'Delete' button was clicked");
+    //alert('You wana Delete?!');
 }
 
 
