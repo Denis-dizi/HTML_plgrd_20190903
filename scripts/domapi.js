@@ -95,10 +95,11 @@ function createChildren(selector){                           //W3D5(0:36:)
     }
 }
 
-function createPlainChild (selector, tag, text) {              //W4D1 (1:03:)
+function createPlainChild (selector, tag, text, className = "my-text") { //W4D1 (1:03:)(2:39)
     const parent = document.querySelector(selector);  
     const newElement = document.createElement(tag);
     newElement.innerText = text;                               //W4D1 (1:08:)
+    newElement.classList.add(className);                       //W4D1 (2:40:)
     parent.appendChild(newElement);
 }
 
@@ -123,6 +124,7 @@ function onButtonClickAdd() {
 function onButtonClickAdd(event) {       //W4D1 (2:37:)
     console.log("An 'Add' button was clicked");
     console.log("Target id is " + event.target.id);
+    createPlainChild("#app-1", "p", "Lorem");   //W4D1 (2:42:)
     //alert('You want to Add?!');
 }
 function onButtonClickDelete() {
