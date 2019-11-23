@@ -115,8 +115,14 @@ function onButtonClick() {
     console.log("A 'Click' button was clicked");
     //alert('You clicked Me?!');
 }
+/*
 function onButtonClickAdd() {
     console.log("An 'Add' button was clicked");
+    //alert('You want to Add?!');
+}*/
+function onButtonClickAdd(event) {       //W4D1 (2:37:)
+    console.log("An 'Add' button was clicked");
+    console.log("Target id is " + event.target.id);
     //alert('You want to Add?!');
 }
 function onButtonClickDelete() {
