@@ -60,6 +60,11 @@ function deleteAllChildren(selector) {  //W3D5(0:29:)
     console.log("All children should be ---");
 }
 
+//Event Handlers (button click) //W4D1 (1:16:)
+function onButtonClick() {
+    console.log("A button was clicked");
+    //alert('You clicked Me?!');
+}
 
 
 main(); //W3D5(2:36:)
