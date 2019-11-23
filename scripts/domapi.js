@@ -121,29 +121,33 @@ function onButtonClickAdd() {
     console.log("An 'Add' button was clicked");
     //alert('You want to Add?!');
 }*/
-function onButtonClickAdd(event) {       //W4D1 (2:37:)
+function onButtonClickAdd(event) {              //W4D1 (2:37:)
     console.log("An 'Add' button was clicked");
     console.log("Target id is " + event.target.id);
     createPlainChild("#app-1", "p", "Lorem");   //W4D1 (2:42:)
     //alert('You want to Add?!');
 }
-function onButtonClickDelete() {
+function onButtonClickDelete() {                //W4D1 ~(1:35:)(2:44)
     console.log("A 'Delete' button was clicked");
+    const myel = document.querySelector("#app-1");//W4D1(2:44)
+    myel.removeChild(myel.lastChild);             //W4D1(2:44)
     //alert('You wana Delete?!');
 }
-function onResetBtnClick() { //W4D1 (1:35:)
+function onResetBtnClick() {                    //W4D1 (1:35:)(2:47)
     console.log("A 'Reset' button was clicked");
+    deleteAllChildren("#app-1");                //W4D1 (2:47)
+    createChildren("#app-1");                   //W4D1 (2:47)
     //alert('do You wana to Reset?!');
 }
-function onBtnV3() { //W4D1 (1:40:)
+function onBtnV3() {                            //W4D1 (1:40:)
     console.log("BtnV3 was clicked");
     //alert(' ');
 }
-function onUpdateButtonClick() { //W4D1 (1:49:)
+function onUpdateButtonClick() {                //W4D1 (1:49:)
     console.log("Handling Udate.. (add button v5)");
     //alert(' ');
 }
 
 
-main(); //W3D5(2:36:)
+main();                                         //W3D5(2:36:)
 
