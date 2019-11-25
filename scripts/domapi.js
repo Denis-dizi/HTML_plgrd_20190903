@@ -65,9 +65,9 @@ function main() { //W3D5(2:36:)
         console.log("Mouse Y: "+ event.clientY);
     }*/
 
-    const mySubmitBtn = document.querySelector('.btn-submit');
+    const mySubmitBtn = document.querySelector('.btn-submit');    //W4D2 (:10:)
     mySubmitBtn.onclick = (event) => {
-        const inp1 = document.querySelector(".inp1");
+        /*const inp1 = document.querySelector(".inp1");
         const val1 = parseFloat(inp1.value);
         console.log("Value 1 is: " +val1);
     
@@ -78,7 +78,12 @@ function main() { //W3D5(2:36:)
         const inp3 = document.querySelector(".inp3");
         const val3 = val1 + val2;
         console.log("Value 3 is: " +val3);
-        inp3.value = val3;
+        inp3.value = val3;  */
+
+        //above in one line below                             //W4D2 (:42:)
+        document.querySelector(".inp3").value = parseFloat(document.querySelector(".inp1").value) +
+        parseFloat(document.querySelector(".inp2").value);
+
     }
 
 }
