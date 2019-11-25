@@ -65,6 +65,22 @@ function main() { //W3D5(2:36:)
         console.log("Mouse Y: "+ event.clientY);
     }*/
 
+    const mySubmitBtn = document.querySelector('.btn-submit');
+    mySubmitBtn.onclick = (event) => {
+        const inp1 = document.querySelector(".inp1");
+        const val1 = parseFloat(inp1.value);
+        console.log("Value 1 is: " +val1);
+    
+        const inp2 = document.querySelector(".inp2");
+        const val2 = parseFloat(inp2.value);
+        console.log("Value 2 is: " +val2);
+        
+        const inp3 = document.querySelector(".inp3");
+        const val3 = val1 + val2;
+        console.log("Value 3 is: " +val3);
+        inp3.value = val3;
+    }
+
 }
 
 function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
