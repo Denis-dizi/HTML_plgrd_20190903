@@ -52,11 +52,11 @@ function main() { //W3D5(2:36:)
     myUpdateBtn.addEventListener('click', onUpdateButtonClick);
     myUpdateBtn.addEventListener('click', onResetBtnClick);
 
-    document.onkeydown = (event) => {                         //W4D1 (2:03:)
+    /*document.onkeydown = (event) => {                         //W4D1 (2:03:)
         //console.log("You pressed keycode: "+ event.code);
         console.log("You pressed key: "+ event.code);
         console.log("Keycode is: "+ event.key);
-    }
+    }*/
     /*
     //mouse event hendler
     //document.onmousemove = (event) => {                        //W4D1 (2:12:)
