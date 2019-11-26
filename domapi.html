@@ -10,13 +10,21 @@
 <body>
     <h1>Dom Api examples</h1>
     <main class="mymain">
-        <form action="" class="my-form">
+        <form action="" class="my-form">                     <!-- W4D2 (:10:) -->
             <input type="text" class="inp1">
             <input type="text" class="inp2">
             <input type="text" class="inp3">
-            <input type="text" class="inp4">
+            <input type="number" min="5" max="25" class="inp4"> <!-- W4D2 (:49:) -->
+            <input type= "color" class="inp5">              <!-- W4D2 (:55:) -->
+            <!-- <input type= "range" class="inp6">              W4D2 (:56:) -->
             <button type="button" class="btn-submit">ADD</button>
         </form>
+        <hr>
+        <div class = "range-container">                      <!-- W4D2 (1:08:) -->
+                <input type= "range" class="inp6" id="range1">
+                <input type= "range" class="inp7" id="range2">
+                <p class="results" id="res1">Result is:  </p>
+        </div>
         <button onclick="onButtonClick();">Click me</button> <!-- W4D1 (1:14:) -->
         <!-- <button onclick="onButtonClickAdd();">Add</button> W4D1 (1:21:) -->
         <button id= "add-btn" onclick="onButtonClickAdd(event);">Add</button> <!-- W4D1 (2:37:) -->

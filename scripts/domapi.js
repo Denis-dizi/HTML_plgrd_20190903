@@ -91,7 +91,34 @@ function main() { //W3D5(2:36:)
        //same one  line as above except we use our own helper function
        vs(".inp3").value = parseFloat(vs(".inp1").value) + parseFloat(vs(".inp2").value);
     }
+
+    //onchange only fires on when you commit to change (mouseup or finger up):
+    document.querySelector("#range1").onchange = (ev) => {    //W4D2 (1:21:)
+        addRanges();
+    }
+    //oninput fires on each little change :
+    document.querySelector("#range2").oninput = (ev) => {    //W4D2 (1:22:)
+        addRanges();
+    }
+
+
+
+    init();
 }
+function init(){
+    addRanges();
+}
+
+function addRanges() {                                           //W4D2 (1:20:)
+    const v1 = parseFloat(document.querySelector("#range1").value);
+    const v2 = parseFloat(document.querySelector("#range2").value);
+    console.log("Range values are: ", v1, v2, v1+v2);
+
+    document.querySelector("#res1").innerText = "Result is " + (v1+v2);
+}
+
+
+
 //helper function (think mega simple $ in jQuery)
 function vs (selector) {
     return document.querySelector(selector);
