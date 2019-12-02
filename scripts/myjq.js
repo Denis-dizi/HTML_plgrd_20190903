@@ -35,7 +35,18 @@ function main() {
     $("p").after("<p> more text </p>");         //W4D3 (0:31)
     $("p").after("<p> Even more text </p>");    //W4D3 (0:31)
 
+    //add listeners to buttons                  //W4D3 (0:32)
+    // $(".my-btn").click(function() {             //W4D3 v1 (0:38)
+    //   console.log("My ID is: " + $(this).attr('id'));
+    // })
+    $(".my-btn").click(function(event) {        //W4D3 v2 (0:39)
+      console.log("My ID is: " + $(this).attr('id'));
 
+      //we could use standart Javascript DOM api to get id
+      console.log("Target is: " +event.target.id);
+
+      console.log("Testing this ", this.id);     //W4D3 v3 (0:41)
+    })
 
   };
 
