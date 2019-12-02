@@ -23,5 +23,12 @@ function main() {
     console.log("Running main!");
     $("h1").css("background-color", "green");
     $(".my-txt").css("background-color", "aqua");
+
+    //$("p").removeClass("my-txt"); //W4D2 (2:23)
+    $(".my-txt").css("color", "blue"); //W4D2 (2:26)
+
+    $("#b2").prop("disabled", true); //W4D2 (2:48)
+    $("#b5").prop("disabled", true); //W4D2 (2:48)
+    $("#b5").prop("disabled", false); //W4D2 (2:48)
   };
 
