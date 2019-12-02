@@ -12,10 +12,12 @@ jQuery mega funkcijai ($) esam iedevuši dokumentu;
 
 
 //run main only when document is ready
-//$(document).ready(main);
+$(document).ready(main);
 
-// alternativa bez jQuery/ in a modern browser it would be something like this //W4D2 (1:52)
-document.addEventListener('DOMContentLoaded', main, false);
+// alternativa bez jQuery
+// in a modern browser it would be something like this //W4D2 (1:52)
+// but jQuery also supports older browsers with onload etc handlers
+//document.addEventListener('DOMContentLoaded', main, false);
 
 function main() {  
     console.log("Running main!");
