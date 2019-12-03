@@ -19,6 +19,21 @@ $(document).ready(main);
 // but jQuery also supports older browsers with onload etc handlers
 //document.addEventListener('DOMContentLoaded', main, false);
 
+const myobj = {                            //W4D3 (0:42)
+  a : 2,
+  b : 3,
+  total : undefined,
+  //functions are first class citizens we can pass them and assign them
+  add : adder
+
+}
+
+function adder(c){
+  this.total = this.a + this.b + c;
+  console.log("Total is", this.total);
+} 
+
+
 function main() {  
     console.log("Running main!");
     $("h1").css("background-color", "green");
@@ -48,5 +63,6 @@ function main() {
       console.log("Testing this ", this.id);     //W4D3 v3 (0:41)
     })
 
+    myobj.add(20);       //const myobj = {       //W4D3 (0:42)(46)
   };
 
