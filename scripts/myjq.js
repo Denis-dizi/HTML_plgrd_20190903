@@ -19,20 +19,53 @@ $(document).ready(main);
 // but jQuery also supports older browsers with onload etc handlers
 //document.addEventListener('DOMContentLoaded', main, false);
 
+
+let user = {                            //W4D3 (1:10)
+  name: "John",
+  age: 30,
+  //shorthand for adding function object. same as:
+  //sayHi : function () { //do stuff
+  sayHi () {
+    // "this" is the "current object"
+    //alert(this.name);
+    console.log("My name is", this.name);
+    //Without this is not as safe as user could have been changed
+    console.log("My name is", user.name);
+},
+a : 3333
+};
+user.sayHi();
+
+
 const myobj = {                            //W4D3 (0:42)
   a : 2,
   b : 3,
   total : undefined,
   //functions are first class citizens we can pass them and assign them
-  add : adder
+  add : adder,                                //W4D3 (0:42)
+  a2 : add2,                                    //W4D3 (0:47)
 
+  a3 : function (n) {                          //W4D3 (0:49)
+    this.total += n;
+  }
 }
 
-function adder(c){
+const o2 = {                                  //W4D3 (0:49)
+  a : 3, 
+  b : 5,
+  total : 20,
+  oadd : adder
+}
+
+
+function adder(c){                            //W4D3 (0:42)
   this.total = this.a + this.b + c;
   console.log("Total is", this.total);
 } 
 
+function add2(i, j) {                          //W4D3 (0:47)
+  return i+j;
+}
 
 function main() {  
     console.log("Running main!");
@@ -64,5 +97,17 @@ function main() {
     })
 
     myobj.add(20);       //const myobj = {       //W4D3 (0:42)(46)
+    o2.oadd(50);         //const o2 = {          //W4D3 (0:49)(50)
+   
+
   };
 
+main.a = 100;                                    //W4D3 (0:59)
+main.b = 200;
+main.total = 0;
+main.add = adder;
+main.add(23);
+
+let a = [6, 9];                                  //W4D3 (1:02)
+a.b = 10;
+console.log(a, a.b);
