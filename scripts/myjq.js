@@ -20,7 +20,7 @@ $(document).ready(main);
 //document.addEventListener('DOMContentLoaded', main, false);
 
 
-let user = {                            //W4D3 (1:10)
+let user = {                            //W4D3 (1:10)(19)
   name: "John",
   age: 30,
   //shorthand for adding function object. same as:
@@ -31,10 +31,18 @@ let user = {                            //W4D3 (1:10)
     console.log("My name is", this.name);
     //Without this is not as safe as user could have been changed
     console.log("My name is", user.name);
+    
+    //arrow function do not have their own this, they use their parents this
+    const arrfun = () => {                            //W4D3 (1:15)(18)
+      console.log("My a is:", this.a);
+    }
+    arrfun();
 },
+
 a : 3333
 };
 user.sayHi();
+//user.arrfun();
 
 
 const myobj = {                            //W4D3 (0:42)
