@@ -12,8 +12,20 @@
     <h1>Vue examp</h1>
     <div class="" id="app1">
         <p> Hello {{ message }} </p>
+
         <p title = "Static Warning"> Beware of {{ warning }} </p>
         <p v-bind:title = "created"> Beware of {{ warning }} </p>
+        <p v-if="seen"> Hello hidden {{ message }} </p>
+        <hr>
+        <ol>
+                <li v-if="seen" v-for="todo in todos">
+                  {{ todo.text }}
+                </li>
+              </ol>
+              <hr>
+              <p>{{ message }}</p>
+              <button v-on:click="reverseMessage">Reverse Message</button>
+
     </div>
     
 </body>
