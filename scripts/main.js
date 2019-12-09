@@ -1,4 +1,4 @@
 console.log("Going to alert");
-alert ("Achtung!");
+// alert ("Achtung!");
 console.log ("I have alerted!");
 document.body.style.backgroundColor = "lightblue";
