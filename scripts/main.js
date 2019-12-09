@@ -17,3 +17,13 @@ var myName = " DiZi ";                        //W3D1(1:59:)
 var myStr = document.getElementById('p1');
 //myDiv.innerText = myStr;
 myStr.innerText = "My name is" + myName + "and I am well.";
+
+var myNoun = "dog";                        //W3D1(2:32:)
+var myAdjective = "big";
+var myVerb = "ran";
+var myAdverb = "quickly";
+var wordBlanks = "My " + myAdjective + " "+ myNoun +" "+ myVerb +" "+ myAdverb +".";
+console.log(wordBlanks);
+var myWrldb = document.getElementById('p2');
+//myDiv.innerText = myStr;
+myWrldb.innerText = wordBlanks;
