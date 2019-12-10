@@ -36,6 +36,8 @@ var myList = [                            //W3D2 (0:13:)
 ];
 // #second way of obtaining element using query
 var resDiv = document.querySelector('#results');
+//quick & dirty way of modifying HTML inside the elemnt
+//for more complicated HTML better to add elements discretely
 resDiv.innerHTML = JSON.stringify(myList);
 // resDiv.innerText = myList;
 // resDiv.innerHTML +="<hr>" +Date.now();  //W3D2 (0:13:)
