@@ -3,6 +3,14 @@
 console.log ("I have alerted!");
 document.body.style.backgroundColor = "lightblue";
 
+//https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line
+function nextInline(arr, item) {            //W3D2 (1:42:)
+    arr.push(item);
+    return arr.shift();
+    //return arr.push();
+}
+console.log("Next inline: " + nextInline([2,5,6,7,8], 4));
+
 
 
 function main() {
