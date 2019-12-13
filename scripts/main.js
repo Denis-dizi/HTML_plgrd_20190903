@@ -4,7 +4,7 @@ console.log ("I have alerted!");
 document.body.style.backgroundColor = "lightblue";
 
 //https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line
-// stand in line
+// stand in line (New added at back of queue old taken off from front of queue.)
 function nextInline(arr, item) {            //W3D2 (1:42:)
     arr.push(item);
     return arr.shift()+" "+JSON.stringify(arr);
@@ -12,6 +12,14 @@ function nextInline(arr, item) {            //W3D2 (1:42:)
 }
 console.log("Next inline: " + nextInline([2,5,6,7,8], 4));
 
+var globObj = {                    //W3D2 (2:04:)
+    "hat": "ballcap",
+    "lovely shirt": "jersey",
+    "shoes": "cleats"
+  };
+  //Accessing Object Properties
+  console.log ("Acces global obj1.: " + globObj.hat);
+  console.log ("Acces global obj2.: " + globObj["lovely shirt"]);
 
 
 function main() {
