@@ -12,15 +12,33 @@ function nextInline(arr, item) {            //W3D2 (1:42:)
 }
 console.log("Next inline: " + nextInline([2,5,6,7,8], 4));
 
-var globObj = {                    //W3D2 (2:04:)
+var globObj = {                    //W3D3 (2:04:)
     "hat": "ballcap",
     "lovely shirt": "jersey",
-    "shoes": "cleats"
-  };
-  //Accessing Object Properties
-  console.log ("Acces global obj1.: " + globObj.hat);
-  console.log ("Acces global obj2.: " + globObj["lovely shirt"]);
+    "shoes": "cleats",
+    "car": {                      //W3D3 (2:49:)
+        "inside": {
+          "glove box": "maps",
+          "passenger seat": "crumbs"
+         },
+        "outside": {
+          "trunk": "jack"
+        }
+    }
+}
 
+//var  vs  let.   Let - mainīgie eksistē tikai {}-ās
+function loopTest() {               //W3D4 (2:03:)
+    for(var i=0; i<3; i++) {
+        console.log('i: ', i);
+    }
+    console.log("i is alive: ", i);
+    for(let j=0; j<3; j++) {
+        console.log('j: ' + j);
+    }
+    console.log("j not alive.", j); //Console: "j is not defined"
+
+}
 
 function main() {
     var a =20;
@@ -33,6 +51,13 @@ function main() {
     //Javascript lets me add strings with numbers,
     //meaning JS converts number to string then concatanetes two strings
     myDiv.innerText = "My Variables: " + a + " : " + b + " : " +c;
+
+  //Accessing Object Properties                    //W3D3 (2:04:)(2:49:)
+  console.log ("Acces global obj1.: " + globObj.hat);
+  console.log ("Acces global obj2.: " + globObj["lovely shirt"]);
+  console.log ("Accessing nested obj.: " + globObj.car.inside["glove box"]);
+
+  loopTest();                                     //W3D4 (2:03:)
 
     var myName = " DiZi ";                        //W3D1(1:59:)
     var myStr = document.getElementById('p1');
