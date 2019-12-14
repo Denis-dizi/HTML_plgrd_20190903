@@ -36,7 +36,7 @@ function loopTest() {               //W3D4 (2:03:)
     for(let j=0; j<3; j++) {
         console.log('j: ' + j);
     }
-    console.log("j not alive.", j); //Console: "j is not defined"
+    //console.log("j not alive.", j); //Console: "j is not defined"
 
 }
 
