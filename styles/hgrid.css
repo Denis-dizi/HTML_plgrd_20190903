@@ -1,0 +1,71 @@
+*,                      /* W3D4  (2:29:) */
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+    /* width: 95vw; */
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 20%);
+    row-gap: 5px;
+    grid-template-areas:
+
+    "header-cont"
+    "nav-cont"
+    "main-cont"
+    "side-cont"
+    "footer-cont"  
+}
+
+header {
+    height: 20px;
+}
+
+.header-cont {
+    background-color: aliceblue;
+    border: 3px solid black;
+    grid-area: header-cont;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nav-cont {
+    background-color: rgb(200, 223, 137);
+    border: 3px solid black;
+    grid-area: nav-cont;
+}
+.main-cont {
+    background-color: rgb(68, 95, 119);
+    border: 3px solid black;
+    grid-area: main-cont;
+}
+.side-cont {
+    background-color: rgb(31, 111, 180);
+    border: 3px solid black;
+    grid-area: side-cont;
+}
+.footer-cont {
+
+    background-color: rgb(30, 29, 112);
+    border: 3px solid black;
+    grid-area: footer-cont;
+}
+
+@media (min-width: 576px) { 
+    .container {
+        grid-template-columns: 1fr 3fr 2fr;
+        grid-template-rows: 20% 60% 20%;
+        row-gap: 5px;
+        grid-template-areas:
+    
+        "header-cont header-cont header-cont"
+        "nav-cont main-cont side-cont"
+        "footer-cont footer-cont footer-cont"  
+    }
+
+    
+}
