@@ -45,8 +45,8 @@ s.unshift(s.pop());
 console.log("from [5,7,2] to: "+JSON.stringify(s));
 
 function main2(){
-    //Arrow Functions - Anonymous func. 		//W3D5(1:23:)
     // funkciju pierakstīšanas veidi
+    //Arrow Functions - Anonymous func. 		//W3D5(1:23:)
     function mymag(){              //Nr1
         return new Date();
     }
@@ -64,7 +64,7 @@ function main2(){
     myf();// retutns only Badac
     console.log(myf()); // returns both
 
-    const myFunc = () => "hmmm";      //Nr4
+    const myFunc = () => "hmmm";    //Nr4
     console.log(myFunc());
 
     const add1 = (a,b) => a+b;
@@ -77,6 +77,24 @@ function main2(){
     console.log(add2(4,86));
 }   //call the func to see results
 
+function main3(){
+    // array.filter()		//W3D5(1:35:)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+    const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+    const result = words.filter(word => word.length > 6);
+    console.log(result);
+    // expected output: Array ["exuberant", "destruction", "present"]
+
+    let res2 = [];       // the same as above
+    for (let i = 0; i < words.length; i++) { //words.length - length of arr "words";
+        if (words[i].length > 6) {  // words[i].length - length of arrays element.
+            res2.push(words[i]);
+        }
+    }
+    console.log(res2);
+
+  
+}   //call the func to see results
 
 
 function main() {
