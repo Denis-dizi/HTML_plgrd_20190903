@@ -93,7 +93,45 @@ function main3(){
     }
     console.log(res2);
 
+
+
+    // array.map()		//W3D5(1:42:)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+    const array1 = [1, 4, 9, 16];
+    const map1 = array1.map(x => x * 2); // pass a function to map
+    console.log(map1);
+    // expected output: Array [2, 8, 18, 32]
   
+
+    //izveidot jauno masivo ar kvadratiem, kas nak no para skaitliem //W3D5(1:43:):
+    let = mynumbers = [1,2,3,4,5,6,7,8,9,10];
+
+    const myarr2 = mynumbers.filter(n => n%2 === 0).map(x => x**2);
+    console.log(myarr2);
+    // expected output: Array [4, 16, 36, 64, 100]
+    // (n => n%2 === 0) - para skaitli; (x => x**2) - kvadrataa
+
+    function myfilter(n) {
+        return n % 2 === 0;
+    }
+    const myarr3 = mynumbers.filter(myfilter).map(x => x**2);
+    console.log(myarr3);
+
+    let myarr1 = [];
+    for (let i = 0; i < mynumbers.length; i++) {
+        if (mynumbers[i] % 2 === 0) {
+            myarr1.push(mynumbers[i]**2);
+        }
+    }
+    console.log(myarr1);
+
+
+
+
+
+
+
+
 }   //call the func to see results
 
 
