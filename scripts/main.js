@@ -37,8 +37,13 @@ function loopTest() {               //W3D4 (2:03:)
         console.log('j: ' + j);
     }
     //console.log("j not alive.", j); //Console: "j is not defined"
-
 }
+//let vs const. Const by default, unless know will need to reassign the value. Only in that case use let.
+const s = [5, 7, 2];               //W3D5 (1:19:)
+s.unshift(s.pop());
+console.log("from [5,7,2] to: "+JSON.stringify(s));
+
+
 
 function main() {
     var a =20;
