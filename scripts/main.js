@@ -127,10 +127,16 @@ function main3(){
 
 
 
+    //Default parametrs for functions   /W3D5(1:49:)
+    const add = (a = 5, b = 10) => a+b;
+    console.log("Def.parm.Ex#1: " + add());         //exp: 15
+    console.log("Def.parm.Ex#2: " + add(333));      //exp: 343
+    console.log("Def.parm.Ex#3: " + add(20,30));    //exp: 50
 
-
-
-
+    function add2 (a=5, b=10) {
+        return a+b;
+    }
+    console.log(add2());
 
 }   //call the func to see results
 
