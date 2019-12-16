@@ -1,14 +1,31 @@
+//  W3D5 (2:13:) W4D1 (0:29:)
+//  JavaScript HTML DOM Document
+//  https://www.w3schools.com/js/js_htmldom_document.asp
+//  https://dom-tutorials.appspot.com/static/index.html
 
-//W3D5 (2:13:) W4D1 (0:29:)
 
 const CFG = {                                           //W4D1 (0:39:) CFG - config
-    MAXPAR : 5,
+    MAXPAR : 5,     // pieliekamo elementu skaits
     backgroundColor: "aqua",
     height: "50vh"
 }
 
-function main() { //W3D5(2:36:)
-    //first we find the element that we will add new elements W3D5(2:14:)
+function main() {                                               //W3D5(2:36:)
+    //first we find the element that we will add new elements: //W3D5(2:14:)
+    //const myApp = document.getElementById('app-1');         //W3D5(2:16:)
+    
+    //We can style the element:
+    //myApp.style.backgroundColor = "green";                   //W3D5(2:16:)
+    //myApp.style.height = "70vh";                             //W3D5(2:16:)
+
+    //tris soli ka izveidot jauno elementu:                     //W3D5(2:17:)
+    //we can add new elements (children)                       //W3D5(2:17:)
+    //first we create a new element NOT attached to anything
+    // before changing to "for loop" (W3D5(2:27:))
+    // const newP = document.createElement('p');                // W3D5(2:19:)
+    // newP.innerText = "Lorem";
+    // myApp.appendChild(newP);
+    
     const myApp = styleMainParent("#app-1", CFG);      //W4D1 (0:52:) changed radicaly
 
     createChildren("#app-1");
@@ -101,10 +118,9 @@ function main() { //W3D5(2:36:)
         addRanges();
     }
 
-
-
     init();
 }
+
 function init(){
     addRanges();
 }
@@ -116,7 +132,6 @@ function addRanges() {                                           //W4D2 (1:20:)
 
     document.querySelector("#res1").innerText = "Result is " + (v1+v2);
 }
-
 
 
 //helper function (think mega simple $ in jQuery)
@@ -132,21 +147,16 @@ function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
     return myApp;
 }
 
-function createChildren(selector){                           //W3D5(0:36:)
+function createChildren(selector){                           //W3D5?(0:36:)
     const parent = document.querySelector(selector);
-    //we can add new elements (children)                    W3D5(2:17:)
-    //first we create a new element NOT attached to anything
-    /* before changing to "for loop"
-    const newP = document.createElement('p');              // W3D5(2:19:)
-    newP.innerText = "Lorem";
-    myApp.appendChild(newP);*/
+    //we can add new elements (children)                    //W3D5(2:17:)
     for (let i = 0; i < CFG.MAXPAR; i++ ) {                //W3D5(2:27:)
         const newP = document.createElement('p');
         newP.id = "p-"+i;
         newP.classList.add("my-text");
         newP.style.height = (i*2 + 20) + "px";              //W3D5(2:31:)
         newP.style.fontSize = 15 + i*3 + "px";              //W3D5(2:46:)
-        newP.style.backgroundColor = "hsl("+(i*360/CFG.MAXPAR)+", 30%, 40%)" //(2:33:)
+        newP.style.backgroundColor = "hsl("+(i*360/CFG.MAXPAR)+", 30%, 40%)" //W3D5(2:33:)
         newP.innerText = "Lorem " +i;
         parent.appendChild(newP);
     }
