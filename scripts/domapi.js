@@ -4,33 +4,33 @@
 //  https://dom-tutorials.appspot.com/static/index.html
 
 
-const CFG = {                                           //W4D1 (0:39:) CFG - config
+const CFG = {       // globals objekts               //W4D1 (0:39:) CFG - config
     MAXPAR : 5,     // pieliekamo elementu skaits
     backgroundColor: "aqua",
     height: "50vh"
 }
 
-function main() {                                               //W3D5(2:36:)
+function main() {                                              //W3D5(2:36:)
     //first we find the element that we will add new elements: //W3D5(2:14:)
-    //const myApp = document.getElementById('app-1');         //W3D5(2:16:)
+    //const myApp = document.getElementById('app-1');          //W3D5(2:16:)
     
     //We can style the element:
     //myApp.style.backgroundColor = "green";                   //W3D5(2:16:)
     //myApp.style.height = "70vh";                             //W3D5(2:16:)
 
-    //tris soli ka izveidot jauno elementu:                     //W3D5(2:17:)
+    //tris soli ka izveidot jauno elementu:                    //W3D5(2:17:)
     //we can add new elements (children)                       //W3D5(2:17:)
     //first we create a new element NOT attached to anything
     // before changing to "for loop" (W3D5(2:27:))
-    // const newP = document.createElement('p');                // W3D5(2:19:)
-    // newP.innerText = "Lorem";
-    // myApp.appendChild(newP);
+    // 1. const newP = document.createElement('p');            // W3D5(2:19:)
+    // 2. newP.innerText = "Lorem";
+    // 3. myApp.appendChild(newP);
     
-    const myApp = styleMainParent("#app-1", CFG);      //W4D1 (0:52:) changed radicaly
+    const myApp = styleMainParent("#app-1", CFG);      //W4D1 (0:52:)
 
-    createChildren("#app-1");
-    createPlainChild('body', 'footer', "(c)2019");          //W4D1 (1:06:)
-    //setTimeout(deleteAllChildren, 5000, "#app-1"); //W4D1 (0:33:)
+    createChildren("#app-1");                          //W4D1 (0:43:)
+    createPlainChild('body', 'footer', "(c)2019");     //W4D1 (1:06:)
+    //setTimeout(deleteAllChildren, 5000, "#app-1");   //W4D1 (0:33:)
     //if we want to delete immediately: deleteAllChildren('#app-1'); //W3D5(0:30:)
 
     //adding Event Handlers  v2                               //W4D1 (1:37:)
@@ -125,7 +125,7 @@ function init(){
     addRanges();
 }
 
-function addRanges() {                                           //W4D2 (1:20:)
+function addRanges() {                                    //W4D2 (1:20:)
     const v1 = parseFloat(document.querySelector("#range1").value);
     const v2 = parseFloat(document.querySelector("#range2").value);
     console.log("Range values are: ", v1, v2, v1+v2);
@@ -139,7 +139,8 @@ function vs (selector) {
     return document.querySelector(selector);
 }
 
-function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
+//function createMainParent(selector)                     //W4D1 (0:48:)
+function styleMainParent(selector, mystyle) {             //W4D1 (0:52:)
     //const myApp = document.getElementById("app-1");
     const myApp = document.querySelector(selector);
     myApp.style.backgroundColor = mystyle.backgroundColor;
@@ -147,9 +148,9 @@ function styleMainParent(selector, mystyle) {                //W4D1 (0:48:)
     return myApp;
 }
 
-function createChildren(selector){                           //W3D5?(0:36:)
+function createChildren(selector){                         //W4D1(0:36:)(42)
     const parent = document.querySelector(selector);
-    //we can add new elements (children)                    //W3D5(2:17:)
+    //we can add new elements (children)                   //W3D5(2:17:)
     for (let i = 0; i < CFG.MAXPAR; i++ ) {                //W3D5(2:27:)
         const newP = document.createElement('p');
         newP.id = "p-"+i;
@@ -161,21 +162,23 @@ function createChildren(selector){                           //W3D5?(0:36:)
         parent.appendChild(newP);
     }
 }
-
-function createPlainChild (selector, tag, text, className = "my-text") { //W4D1 (1:03:)(2:39)
+                                                            //W4D1 (1:03:)(2:39)
+function createPlainChild (selector, tag, text, className = "my-text") {
     const parent = document.querySelector(selector);  
     const newElement = document.createElement(tag);
-    newElement.innerText = text;                               //W4D1 (1:08:)
-    newElement.classList.add(className);                       //W4D1 (2:40:)
+    newElement.innerText = text;                            //W4D1 (1:08:)
+    newElement.classList.add(className);                    //W4D1 (2:40:)
     parent.appendChild(newElement);
 }
+//setTimeout(deleteAllChildren, 5000, "#app-1");            //W4D1(0:34:)
+//deleteAllChildren("#app-1");//immediately
 
-function deleteAllChildren(selector) {                           //W3D5(0:29:)
+function deleteAllChildren(selector) {                      //W4D1(0:27:)(37)
     const parent = document.querySelector(selector)
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-    console.log("All children should be ---");
+    console.log("All children should be done");
 }
 
 //Event Handlers v1 (button click) //W4D1 (1:16:)
