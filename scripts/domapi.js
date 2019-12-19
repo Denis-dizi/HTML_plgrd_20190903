@@ -130,105 +130,107 @@ function main() {                                              //W3D5(2:36:)
         addRanges();
     }
 
-    init();
-}
-
-function init(){
-    addRanges();
-}
-
-function addRanges() {                                    //W4D2 (1:20:)
-    const v1 = parseFloat(document.querySelector("#range1").value);
-    const v2 = parseFloat(document.querySelector("#range2").value);
-    console.log("Range values are: ", v1, v2, v1+v2);
-
-    document.querySelector("#res1").innerText = "Result is " + (v1+v2);
-}
-
-
-//helper function (think mega simple $ in jQuery)
-function vs (selector) {
-    return document.querySelector(selector);
-}
-
-//function createMainParent(selector)                     //W4D1 (0:48:)
-function styleMainParent(selector, mystyle) {             //W4D1 (0:52:)
-    //const myApp = document.getElementById("app-1");
-    const myApp = document.querySelector(selector);
-    myApp.style.backgroundColor = mystyle.backgroundColor;
-    myApp.style.height = mystyle.height;
-    return myApp;
-}
-
-function createChildren(selector){                         //W4D1(0:36:)(42)
-    const parent = document.querySelector(selector);
-    //we can add new elements (children)                   //W3D5(2:17:)
-    for (let i = 0; i < CFG.MAXPAR; i++ ) {                //W3D5(2:27:)
-        const newP = document.createElement('p');
-        newP.id = "p-"+i;
-        newP.classList.add("my-text");
-        newP.style.height = (i*2 + 20) + "px";              //W3D5(2:31:)
-        newP.style.fontSize = 15 + i*3 + "px";              //W3D5(2:46:)
-        newP.style.backgroundColor = "hsl("+(i*360/CFG.MAXPAR)+", 30%, 40%)" //W3D5(2:33:)
-        newP.innerText = "Lorem " +i;
-        parent.appendChild(newP);
+        init();
     }
-}
-// simplified vers. of createChildren() f.             //W4D1 (1:03:)(2:39)
-function createPlainChild (selector, tag, text, className = "my-text") {
-    const parent = document.querySelector(selector);  
-    const newElement = document.createElement(tag);
-    newElement.innerText = text;                            //W4D1 (1:08:)
-    newElement.classList.add(className);                    //W4D1 (2:40:)
-    parent.appendChild(newElement);
-}
-//setTimeout(deleteAllChildren, 5000, "#app-1");            //W4D1(0:34:)
-//deleteAllChildren("#app-1");//immediately
 
-function deleteAllChildren(selector) {                      //W4D1(0:27:)(37)
-    const parent = document.querySelector(selector)
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+    function init(){
+        addRanges();
     }
-    console.log("All children should be done");
-}
 
-//Event Handlers (buttons)                        //W4D1 (1:16:)
-function onButtonClick() {
-    console.log("A 'Click' button was clicked");
-    //alert('You clicked Me?!');
-}
-/*
-function onButtonClickAdd() {
-    console.log("An 'Add' button was clicked");
-    //alert('You want to Add?!');
-}*/
-function onButtonClickAdd(event) {              //W4D1 (1:28)(2:37:)
-    console.log("An 'Add' button was clicked");
-    console.log("Target id is " + event.target.id);
-    createPlainChild("#app-1", "p", "Lorem");   //W4D1 (2:42:)
-    //alert('You want to Add?!');
-}
-function onButtonClickDelete() {                //W4D1 (1:28)(1:35:)(2:44)
-    console.log("A 'Delete' button was clicked");
-    const myel = document.querySelector("#app-1");//W4D1(2:44)
-    myel.removeChild(myel.lastChild);             //W4D1(2:44)
-    //alert('You wana Delete?!');
-}
-function onResetBtnClick() {                    //W4D1 (1:34:)(2:47)
-    console.log("A 'Reset' button was clicked");
-    deleteAllChildren("#app-1");                //W4D1 (2:47)
-    createChildren("#app-1");                   //W4D1 (2:47)
-    //alert('do You wana to Reset?!');
-}
-function onBtnV3() {                            //W4D1 (1:40:)
-    console.log("BtnV3 was clicked");
-    //alert(' ');
-}
-function onUpdateButtonClick() {                //W4D1 (1:49:)
-    console.log("Handling Udate.. (add button v5)");
-    //alert(' ');
-}
+    function addRanges() {                                    //W4D2 (1:20:)
+        const v1 = parseFloat(document.querySelector("#range1").value);
+        const v2 = parseFloat(document.querySelector("#range2").value);
+        console.log("Range values are: ", v1, v2, v1+v2);
+
+        document.querySelector("#res1").innerText = "Result is " + (v1+v2);
+    }
+
+
+    //helper function (think mega simple $ in jQuery)
+    function vs (selector) {
+        return document.querySelector(selector);
+    }
+
+    //function createMainParent(selector)                     //W4D1 (0:48:)
+    function styleMainParent(selector, mystyle) {             //W4D1 (0:52:)
+        //const myApp = document.getElementById("app-1");
+        const myApp = document.querySelector(selector);
+        myApp.style.backgroundColor = mystyle.backgroundColor;
+        myApp.style.height = mystyle.height;
+        return myApp;
+    }
+
+    function createChildren(selector){                         //W4D1(0:36:)(42)
+        const parent = document.querySelector(selector);
+        //we can add new elements (children)                   //W3D5(2:17:)
+        for (let i = 0; i < CFG.MAXPAR; i++ ) {                //W3D5(2:27:)
+            const newP = document.createElement('p');
+            newP.id = "p-"+i;
+            newP.classList.add("my-text");
+            newP.style.height = (i*2 + 20) + "px";              //W3D5(2:31:)
+            newP.style.fontSize = 15 + i*3 + "px";              //W3D5(2:46:)
+            newP.style.backgroundColor = "hsl("+(i*360/CFG.MAXPAR)+", 30%, 40%)" //W3D5(2:33:)
+            newP.innerText = "Lorem " +i;
+            parent.appendChild(newP);
+        }
+    }
+    // simplified vers. of createChildren() f.             //W4D1 (1:03:)(2:39)
+    function createPlainChild (selector, tag, text, className = "my-text") {
+        const parent = document.querySelector(selector);  
+        const newElement = document.createElement(tag);
+        newElement.innerText = text;                            //W4D1 (1:08:)
+        newElement.classList.add(className);                    //W4D1 (2:40:)
+        parent.appendChild(newElement);
+    }
+    //setTimeout(deleteAllChildren, 5000, "#app-1");            //W4D1(0:34:)
+    //deleteAllChildren("#app-1");//immediately
+
+    function deleteAllChildren(selector) {                      //W4D1(0:27:)(37)
+        const parent = document.querySelector(selector)
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+        console.log("All children should be done");
+    }
+
+    //===========Event Handlers (buttons)===============================
+
+    function onButtonClick() {                      //W4D1 (1:16:)
+        console.log("A 'Click' button was clicked");
+        //alert('You clicked Me?!');
+    }
+    /*
+    function onButtonClickAdd() {
+        console.log("An 'Add' button was clicked");
+        //alert('You want to Add?!');
+    }*/
+    function onButtonClickAdd(event) {              //W4D1 (1:28)(2:37:)
+        console.log("An 'Add' button was clicked");
+        console.log("Target id is " + event.target.id);
+        createPlainChild("#app-1", "p", "Lorem");   //W4D1 (2:42:)
+        //alert('You want to Add?!');
+    }
+    function onButtonClickDelete() {                //W4D1 (1:28)(1:35:)(2:44)
+        console.log("A 'Delete' button was clicked");
+        const myel = document.querySelector("#app-1");//W4D1(2:44)
+        myel.removeChild(myel.lastChild);             //W4D1(2:44)
+        //alert('You wana Delete?!');
+    }
+    function onResetBtnClick() {                    //W4D1 (1:34:)(2:47)
+        console.log("A 'Reset' button was clicked");
+        deleteAllChildren("#app-1");                //W4D1 (2:47)
+        createChildren("#app-1");                   //W4D1 (2:47)
+        //alert('do You wana to Reset?!');
+    }
+    function onBtnV3() {                            //W4D1 (1:40:)
+        console.log("BtnV3 was clicked");
+        //alert(' ');
+    }
+    function onUpdateButtonClick() {                //W4D1 (1:49:)
+        console.log("Handling Udate.. (add button v5)");
+        //alert(' ');
+    }
+    //=================================================================
 
 
 main();                                         //W3D5(2:36:)
