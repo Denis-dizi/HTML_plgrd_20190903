@@ -33,6 +33,7 @@ function main() {                                              //W3D5(2:36:)
     //setTimeout(deleteAllChildren, 5000, "#app-1");   //W4D1 (0:33:)
     //if we want to delete immediately: deleteAllChildren('#app-1'); //W3D5(0:30:)
 
+    //=========== Event Handlers===============================
     //Adding Event Handlers      (usualy put to end of main)   //W4D1 (1:36:)
     //const myDeleteBtn = document.querySelector("#delete-btn");//W4D1 (1:36:)
     //myDeleteBtn.onclick = onButtonClickDelete;
@@ -44,8 +45,7 @@ function main() {                                              //W3D5(2:36:)
 
     // Event Handlers  v3                               //W4D1 (1:40:)
     document.querySelector('#btn-V3').onclick = onBtnV3;
-    //arrow syntax example on adding handler underneath
-
+   
     // Event Handlers  v4        Anonim                  //W4D1 (1:42:)(2:17)
     //arrow syntax example on adding handler underneath
     document.querySelector('#random-btn').onclick = (event) => {
@@ -78,7 +78,7 @@ function main() {                                              //W3D5(2:36:)
         }
     }
     propagation();
-
+    //=========== key / mouse event hendlers===============================
     /*document.onkeydown = (event) => {                         //W4D1 (2:03:)
         console.log("You pressed key: "+ event.code);
         console.log("Keycode is: "+ event.key);
@@ -115,15 +115,24 @@ function main() {                                              //W3D5(2:36:)
        // calc v3        in one line v2                            //W4D2 (0:45:)
        //same one  line as above except we use our own helper function
        vs(".inp3").value = parseFloat(vs(".inp1").value) + parseFloat(vs(".inp2").value);
-       console.log("Calc btn was presed");
+       console.log("Calc btn was presed. Value is: " + vs(".inp3").value);
         }
         //helper function (think mega simple $ in jQuery)
         function vs (selector) {                                  //W4D2 (0:45:)
         return document.querySelector(selector);
         }
+    //=========== Color button===============================
+    const footCol_btn = document.querySelector('#btn-color');    //W4D2 (0:56:)
+    footCol_btn.onclick = footclr;
+        
+    function footclr() {
+        const inp5 = document.querySelector('.inp5');            //W4D2 (0:56:)
+        document.querySelector('footer').style.backgroundColor = inp5.value;
+        console.log("Add to Footer was clicked. Color is: " + inp5.value);
+        footCol_btn.style.backgroundColor = inp5.value;
+    }
 
-
-
+    //=========== Ranges===============================
     //onchange only fires on when you commit to change (mouseup or finger up):
     document.querySelector("#range1").onchange = (ev) => {    //W4D2 (1:21:)
         addRanges();
