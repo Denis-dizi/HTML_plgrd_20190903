@@ -33,50 +33,62 @@ function main() {                                              //W3D5(2:36:)
     //setTimeout(deleteAllChildren, 5000, "#app-1");   //W4D1 (0:33:)
     //if we want to delete immediately: deleteAllChildren('#app-1'); //W3D5(0:30:)
 
-    //adding Event Handlers  v2                               //W4D1 (1:37:)
+    //Adding Event Handlers      (usualy put to end of main)   //W4D1 (1:36:)
+    //const myDeleteBtn = document.querySelector("#delete-btn");//W4D1 (1:36:)
+    //myDeleteBtn.onclick = onButtonClickDelete;
+    
+    // Event Handlers  v2                               //W4D1 (1:37:)
+    //document.querySelector('#reset-btn').onclick = onResetBtnClick;
     const myResetBtn = document.querySelector('#reset-btn');
     myResetBtn.onclick = onResetBtnClick;
-    //adding Event Handlers  v3                               //W4D1 (1:40:)
+
+    // Event Handlers  v3                               //W4D1 (1:40:)
     document.querySelector('#btn-V3').onclick = onBtnV3;
     //arrow syntax example on adding handler underneath
-    //adding Event Handlers  v4                               //W4D1 (1:42:)(2:17)
+
+    // Event Handlers  v4        Anonim                  //W4D1 (1:42:)(2:17)
+    //arrow syntax example on adding handler underneath
     document.querySelector('#random-btn').onclick = (event) => {
         console.log("Random was clicked");
         //event.target gets me the element responsible for firing the event
-        event.target.innerText = "R"+Math.floor(Math.random()*100); //W4D1 (2:19)
+        event.target.innerText = "R"+Math.floor(Math.random()*100); //W4D1 (2:18)
     };
 
-    document.querySelector('#app-1').onclick = (event) => { //W4D1 (2:23)
-        console.log("You clicked my app div "+event.target.id);
-    }
-
-    document.querySelector('#p-2').onclick = (event) => { //W4D1 (2:25)
-        console.log("You clicked paragraph "+event.target.id);
-    }
-
-    //example on how to stop bubbling up
-    document.querySelector('#p-3').onclick = (event) => { //W4D1 (2:31)
-        console.log("You clicked paragraph "+event.target.id);
-        console.log("Stoping bubbling (propagation) toward parent");
-        event.stopPropagation();
-    }
-
-
+    //Event Handlers  v5  (v3 pēc VS)                    //W4D1 (1:45:)
     //addEventListener for adding multiple function callbacks
-    //adding Event Handlers  v5(v3 pēc VS)                    //W4D1 (1:45:)
     const myUpdateBtn = document.querySelector('#update-btn');
     myUpdateBtn.addEventListener('click', () => {console.log("Updating");});
     myUpdateBtn.addEventListener('click', onUpdateButtonClick);
     myUpdateBtn.addEventListener('click', onResetBtnClick);
 
+    function propagation() {                                //W4D1 (2:23)
+        document.querySelector('#app-1').onclick = (event) => { 
+            console.log("You clicked my app div "+event.target.id);
+        }
+
+        document.querySelector('#p-2').onclick = (event) => { //W4D1 (2:25)
+            console.log("You clicked paragraph "+event.target.id);
+        }
+
+        //example on how to stop bubbling up
+        document.querySelector('#p-3').onclick = (event) => { //W4D1 (2:31)
+            console.log("You clicked paragraph "+event.target.id);
+            console.log("Stoping bubbling (propagation) toward parent");
+            event.stopPropagation();
+        }
+    }
+    propagation();
+
+
+
     /*document.onkeydown = (event) => {                         //W4D1 (2:03:)
-        //console.log("You pressed keycode: "+ event.code);
         console.log("You pressed key: "+ event.code);
         console.log("Keycode is: "+ event.key);
     }*/
     /*
     //mouse event hendler
-    //document.onmousemove = (event) => {                        //W4D1 (2:12:)
+    //how to handle mouse move events
+    //document.onmousemove = (event) => {                        //W4D1 (2:11:)
     document.querySelector('#app-1').onmousemove = (event) => {  //W4D1 (2:15:)
         console.log("Mouse X: "+ event.clientX);
         console.log("Mouse Y: "+ event.clientY);
@@ -162,7 +174,7 @@ function createChildren(selector){                         //W4D1(0:36:)(42)
         parent.appendChild(newP);
     }
 }
-                                                            //W4D1 (1:03:)(2:39)
+// simplified vers. of createChildren() f.             //W4D1 (1:03:)(2:39)
 function createPlainChild (selector, tag, text, className = "my-text") {
     const parent = document.querySelector(selector);  
     const newElement = document.createElement(tag);
@@ -181,7 +193,7 @@ function deleteAllChildren(selector) {                      //W4D1(0:27:)(37)
     console.log("All children should be done");
 }
 
-//Event Handlers v1 (button click) //W4D1 (1:16:)
+//Event Handlers (buttons)                        //W4D1 (1:16:)
 function onButtonClick() {
     console.log("A 'Click' button was clicked");
     //alert('You clicked Me?!');
@@ -191,19 +203,19 @@ function onButtonClickAdd() {
     console.log("An 'Add' button was clicked");
     //alert('You want to Add?!');
 }*/
-function onButtonClickAdd(event) {              //W4D1 (2:37:)
+function onButtonClickAdd(event) {              //W4D1 (1:28)(2:37:)
     console.log("An 'Add' button was clicked");
     console.log("Target id is " + event.target.id);
     createPlainChild("#app-1", "p", "Lorem");   //W4D1 (2:42:)
     //alert('You want to Add?!');
 }
-function onButtonClickDelete() {                //W4D1 ~(1:35:)(2:44)
+function onButtonClickDelete() {                //W4D1 (1:28)(1:35:)(2:44)
     console.log("A 'Delete' button was clicked");
     const myel = document.querySelector("#app-1");//W4D1(2:44)
     myel.removeChild(myel.lastChild);             //W4D1(2:44)
     //alert('You wana Delete?!');
 }
-function onResetBtnClick() {                    //W4D1 (1:35:)(2:47)
+function onResetBtnClick() {                    //W4D1 (1:34:)(2:47)
     console.log("A 'Reset' button was clicked");
     deleteAllChildren("#app-1");                //W4D1 (2:47)
     createChildren("#app-1");                   //W4D1 (2:47)
