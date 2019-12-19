@@ -79,8 +79,6 @@ function main() {                                              //W3D5(2:36:)
     }
     propagation();
 
-
-
     /*document.onkeydown = (event) => {                         //W4D1 (2:03:)
         console.log("You pressed key: "+ event.code);
         console.log("Keycode is: "+ event.key);
@@ -93,33 +91,38 @@ function main() {                                              //W3D5(2:36:)
         console.log("Mouse X: "+ event.clientX);
         console.log("Mouse Y: "+ event.clientY);
     }*/
-
-    // calc v1                                                  //W4D2 (:10:)
-    const mySubmitBtn = document.querySelector('.btn-submit');
+    //=========== func Calc===============================
+    const mySubmitBtn = document.querySelector('.btn-calc');     //W4D2 (0:10:)
     mySubmitBtn.onclick = (event) => {
-        /*
-        const inp1 = document.querySelector(".inp1");
-        const val1 = parseFloat(inp1.value);
-        console.log("Value 1 is: " +val1);
+        // calc v1  
+        // const inp1 = document.querySelector(".inp1");           //W4D2 (0:18:)       
+        // const val1 = parseFloat(inp1.value);
+        // console.log("Value 1 is: " +val1);
     
-        const inp2 = document.querySelector(".inp2");
-        const val2 = parseFloat(inp2.value);
-        console.log("Value 2 is: " +val2);
+        // const inp2 = document.querySelector(".inp2");           //W4D2 (0:27:)
+        // const val2 = parseFloat(inp2.value);
+        // console.log("Value 2 is: " +val2);
         
-        const inp3 = document.querySelector(".inp3");
-        const val3 = val1 + val2;
-        console.log("Value 3 is: " +val3);
-        inp3.value = val3;  
-        */
-        //above in one line below   calc v2                   //W4D2 (:42:)
-        /*
-        document.querySelector(".inp3").value = parseFloat(document.querySelector(".inp1").value) +
-        parseFloat(document.querySelector(".inp2").value);
-        */
-       // calc v3                                                  //W4D2 (:45:)
+        // const inp3 = document.querySelector(".inp3");           //W4D2 (0:37:)
+        // const val3 = val1 + val2;
+        // console.log("Value 3 is: " +val3);
+        // inp3.value = val3;  
+        
+        //calc v2       above in one line below  v1                //W4D2 (0:42:)
+        // document.querySelector(".inp3").value = parseFloat(document.querySelector(".inp1").value) +
+        // parseFloat(document.querySelector(".inp2").value);
+        
+       // calc v3        in one line v2                            //W4D2 (0:45:)
        //same one  line as above except we use our own helper function
        vs(".inp3").value = parseFloat(vs(".inp1").value) + parseFloat(vs(".inp2").value);
-    }
+       console.log("Calc btn was presed");
+        }
+        //helper function (think mega simple $ in jQuery)
+        function vs (selector) {                                  //W4D2 (0:45:)
+        return document.querySelector(selector);
+        }
+
+
 
     //onchange only fires on when you commit to change (mouseup or finger up):
     document.querySelector("#range1").onchange = (ev) => {    //W4D2 (1:21:)
@@ -140,11 +143,6 @@ function main() {                                              //W3D5(2:36:)
         console.log("Range values are: ", v1, v2, v1+v2);
 
         document.querySelector("#res1").innerText = "Result is " + (v1+v2);
-    }
-
-    //helper function (think mega simple $ in jQuery)
-    function vs (selector) {
-        return document.querySelector(selector);
     }
 
     //===========Main func (create, delete)===============================
