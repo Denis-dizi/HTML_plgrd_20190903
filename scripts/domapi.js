@@ -129,14 +129,11 @@ function main() {                                              //W3D5(2:36:)
     document.querySelector("#range2").oninput = (ev) => {    //W4D2 (1:22:)
         addRanges();
     }
-
         init();
     }
-
     function init(){
         addRanges();
     }
-
     function addRanges() {                                    //W4D2 (1:20:)
         const v1 = parseFloat(document.querySelector("#range1").value);
         const v2 = parseFloat(document.querySelector("#range2").value);
@@ -149,6 +146,7 @@ function main() {                                              //W3D5(2:36:)
     function vs (selector) {
         return document.querySelector(selector);
     }
+
     //===========Main func (create, delete)===============================
 
     //function createMainParent(selector)                     //W4D1 (0:48:)
