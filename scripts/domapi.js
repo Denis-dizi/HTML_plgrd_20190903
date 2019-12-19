@@ -145,11 +145,11 @@ function main() {                                              //W3D5(2:36:)
         document.querySelector("#res1").innerText = "Result is " + (v1+v2);
     }
 
-
     //helper function (think mega simple $ in jQuery)
     function vs (selector) {
         return document.querySelector(selector);
     }
+    //===========Main func (create, delete)===============================
 
     //function createMainParent(selector)                     //W4D1 (0:48:)
     function styleMainParent(selector, mystyle) {             //W4D1 (0:52:)
@@ -193,7 +193,7 @@ function main() {                                              //W3D5(2:36:)
         console.log("All children should be done");
     }
 
-    //===========Event Handlers (buttons)===============================
+    //===========Event Handlers func (buttons)===============================
 
     function onButtonClick() {                      //W4D1 (1:16:)
         console.log("A 'Click' button was clicked");
