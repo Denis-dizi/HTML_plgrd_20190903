@@ -48,6 +48,37 @@
             </div>
         </form>
     </div>
+    <hr><br>
+<div>
+    <!-- https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_range_get -->
+    <h3>A demonstration of how to access a Slider Control</h3>
+    <input type="range" id="myRange" value="90">
+    <p>Click the button to get the value of the slider control.</p>
+    <button onclick="myFunction()">Try it</button>
+    <p><strong>Note:</strong> input elements with type="range" are not supported in IE 9 and earlier versions.</p>
+    <p id="demo1"></p>
+    <p id="demo"></p>
+
+    <script>
+    function myFunction() {
+    var x = document.getElementById("myRange").value;
+    document.getElementById("demo").innerHTML = x;
+    }
+
+    // var x = document.getElementById("myRange").value;
+    // document.getElementById("demo1").innerHTML = x;
+
+
+    </script>
+
+
+</div>
+    
+
+
+
+
+
 
     
 </body>

@@ -135,23 +135,31 @@ function main() {                                              //W3D5(2:36:)
     //=========== Ranges===============================
     //onchange only fires on when you commit to change (mouseup or finger up):
     document.querySelector("#range1").onchange = (ev) => {    //W4D2 (1:21:)
-        addRanges();
+        addRanges();                                         // ev = event
     }
     //oninput fires on each little change :
     document.querySelector("#range2").oninput = (ev) => {    //W4D2 (1:22:)
         addRanges();
     }
+    // const v1 = parseFloat(document.querySelector("#range1").value);
+    // const inp61 = document.querySelector(".inp61");
+    // inp61.value = v1;
+    // console.log("v1: ",v1);
+
         init();
-    }
-    function init(){
+}
+
+function init(){                                         //W4D2 (1:13:)(1:20)
         addRanges();
     }
     function addRanges() {                                    //W4D2 (1:20:)
-        const v1 = parseFloat(document.querySelector("#range1").value);
+        const v1 = parseFloat(document.querySelector("#range1").value); //W4D2 (1:13:)
         const v2 = parseFloat(document.querySelector("#range2").value);
-        console.log("Range values are: ", v1, v2, v1+v2);
+        console.log("Range values are: ", v1, v2," sum:", v1+v2);
 
-        document.querySelector("#res1").innerText = "Result is " + (v1+v2);
+        document.querySelector("#res1").innerText ="Result is "+(v1+v2);//W4D2 (1:15:)
+        // document.querySelector(".inp61").innerText.value = v1;
+        document.querySelector("#res61").innerText = v1;
     }
 
     //===========Main func (create, delete)===============================
