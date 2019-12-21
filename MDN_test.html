@@ -7,8 +7,12 @@
     <title>MDN different</title>
 </head>
 <body>
-    <div id = "form1">
-            <!-- https://developer.mozilla.org/ru/docs/Web/HTML/Element/form -->
+    <h1>Examples of forms and ranges.</h1>
+    <hr>
+        <div id = "form1">
+            <p>Source:
+                <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/form">
+                    developer.mozilla.org</a> </p>
         <p>Простая форма, которая пошлёт GET запрос:</p>
         <form action="">
             <label for="GET-name">Name:</label>
@@ -34,7 +38,10 @@
   <hr><br>
     <div>  
         <form>
-            <!-- https://developer.mozilla.org/ru/docs/Web/HTML/Element/input/text -->
+            <p>Source:
+                <a href="https://developer.mozilla.org/ru/docs/Web/HTML/Element/input/text">
+                developer.mozilla.org</a> 
+            </p>
             <div>
                 <label for="uname">Choose a username: </label>
                 <input type="text" id="uname" name="name" required size="20"
@@ -48,10 +55,24 @@
             </div>
         </form>
     </div>
-    <hr><br>
+    <hr>
 <div>
-    <!-- https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_range_get -->
-    <h3>A demonstration of how to access a Slider Control</h3>
+    <h2>Mobile-Web-App: HTML5 input</h2>
+    <p>Source:
+        <a href="http://mobile-web-app.blogspot.com/2012/03/easy-display-value-for-of-slider-in.html">
+            mobile-web-app.blogspot.com</a> </p>
+        <label for="rangeinput">Range</label>
+    <input id="rangeinput" type="range" min="0" max="10" value="4" 
+                        oninput="rangevalue.value=value"></input>
+    <output id="rangevalue">4</output>
+ 
+</div>
+<hr>
+<div>
+    <h2>How to access a Slider Control</h2>
+    <p>Source:
+        <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_range_get">
+            www.w3schools.com</a> </p>
     <input type="range" id="myRange" value="90">
     <p>Click the button to get the value of the slider control.</p>
     <button onclick="myFunction()">Try it</button>
@@ -67,19 +88,28 @@
 
     // var x = document.getElementById("myRange").value;
     // document.getElementById("demo1").innerHTML = x;
-
-
     </script>
 
-
 </div>
-    
+<hr>
+<div>
+    <h2>Change the value of a slider control</h2>
+    <p>Source:
+        <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_range_value">
+            www.w3schools.com</a> </p>
+    <input type="range" id="myRange1">
+    <p>Click the button to change the value of the slider control.</p>
+    <button onclick="myFunction2()">Try it</button>
+    <p><strong>Note:</strong> input elements with type="range" are not supported in IE 9 and earlier versions.</p>
+    <p id="demo"></p>
+    <script>
+        function myFunction2() {
+        document.getElementById("myRange1").value = "75";
+        }
+    </script>
+</div>
+<hr>
 
 
-
-
-
-
-    
 </body>
 </html>
