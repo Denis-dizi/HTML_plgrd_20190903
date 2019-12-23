@@ -1,17 +1,17 @@
 //created W4D2 (1:35:)
 
-/* anonima funkcija                           //W4D2 (1:46:)
+/* anonima funkcija                                    //W4D2 (1:46:)
 jQuery mega funkcijai ($) esam iedevuši dokumentu; 
 .ready - specify a func to execute after the DOM is ready 
 (ready metode pieprāsa funkciju()): */
 
-// $(document).ready(function() {  
-//     $("h1").css("background-color", "green");
-//     $(".my-txt").css("background-color", "aqua");
+// $(document).ready(function() {                       //W4D2 (1:46:)
+//     $("h1").css("background-color", "green");        //W4D2 (1:36:)
+//     $(".my-txt").css("background-color", "aqua");    //W4D2 (1:38:)
 //   });
+//================================================================================
 
-
-//run main only when document is ready
+//run main only when document is ready                  //W4D2 (1:47:)
 $(document).ready(main);
 
 // alternativa bez jQuery
@@ -75,10 +75,10 @@ function add2(i, j) {                          //W4D3 (0:47)
   return i+j;
 }
 
-function main() {  
+function main() {                               //W4D2 (1:47:)
     console.log("Running main!");
-    $("h1").css("background-color", "green");
-    $(".my-txt").css("background-color", "aqua");
+    $("h1").css("background-color", "green");     //W4D2 (1:36:)
+    $(".my-txt").css("background-color", "aqua"); //W4D2 (1:38:)
 
     //$("p").removeClass("my-txt");            //W4D2 (2:23)
     $(".my-txt").css("color", "blue");         //W4D2 (2:26)
