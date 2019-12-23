@@ -5,20 +5,38 @@ jQuery mega funkcijai ($) esam iedevuši dokumentu;
 .ready - specify a func to execute after the DOM is ready 
 (ready metode pieprāsa funkciju()): */
 
+//=========1-st way to write func=================================================
+
 // $(document).ready(function() {                       //W4D2 (1:46:)
 //     $("h1").css("background-color", "green");        //W4D2 (1:36:)
 //     $(".my-txt").css("background-color", "aqua");    //W4D2 (1:38:)
 //   });
+//=========2-nd way to write func=================================================
+
+//run main only when document is ready                   //W4D2 (1:47:)
+// $(document).ready(main);
+
+// function main() {                                     //W4D2 (1:47:)
+//   console.log("Running main!");
+//   $("h1").css("background-color", "green");           //W4D2 (1:36:)
+//   $(".my-txt").css("background-color", "aqua");       //W4D2 (1:38:)
+// }
+//=======alternativa bez jQuery====================================================
+
+// in a modern browser it would be something like this         //W4D2 (1:52)
+// but jQuery also supports older browsers with onload etc handlers
+//document.addEventListener('DOMContentLoaded', main, false);  //W4D2 (1:52)
+
+// function main() {                                     //W4D2 (1:47:)
+//   console.log("Running main!");
+//   $("h1").css("background-color", "green");           //W4D2 (1:36:)
+//   $(".my-txt").css("background-color", "aqua");       //W4D2 (1:38:)
+// }
 //================================================================================
 
-//run main only when document is ready                  //W4D2 (1:47:)
+
+//run main only when document is ready                     //W4D2 (1:47:)
 $(document).ready(main);
-
-// alternativa bez jQuery
-// in a modern browser it would be something like this //W4D2 (1:52)
-// but jQuery also supports older browsers with onload etc handlers
-//document.addEventListener('DOMContentLoaded', main, false);
-
 
 let user = {                            //W4D3 (1:10)(19)
   name: "John",
