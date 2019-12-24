@@ -21,10 +21,10 @@ jQuery mega funkcijai ($) esam iedevuši dokumentu;
 //   $("h1").css("background-color", "green");           //W4D2 (1:36:)
 //   $(".my-txt").css("background-color", "aqua");       //W4D2 (1:38:)
 // }
-//=======alternativa bez jQuery====================================================
+//=====bez jQuery ready - alternativa ============================================
 
 // in a modern browser it would be something like this         //W4D2 (1:52)
-// but jQuery also supports older browsers with onload etc handlers
+// but jQuery also supports older browsers with onload etc handlers //W4D2 (1:53)
 //document.addEventListener('DOMContentLoaded', main, false);  //W4D2 (1:52)
 
 // function main() {                                     //W4D2 (1:47:)
@@ -34,11 +34,10 @@ jQuery mega funkcijai ($) esam iedevuši dokumentu;
 // }
 //================================================================================
 
-
-//run main only when document is ready                     //W4D2 (1:47:)
+//run main only when document is ready                //W4D2 (1:47:)
 $(document).ready(main);
 
-let user = {                            //W4D3 (1:10)(19)
+let user = {                                          //W4D3 (1:10)(19)
   name: "John",
   age: 30,
   //shorthand for adding function object. same as:
@@ -63,13 +62,13 @@ user.sayHi();
 //user.arrfun();
 
 
-const myobj = {                            //W4D3 (0:42)
+const myobj = {                               //W4D3 (0:42)
   a : 2,
   b : 3,
   total : undefined,
   //functions are first class citizens we can pass them and assign them
   add : adder,                                //W4D3 (0:42)
-  a2 : add2,                                    //W4D3 (0:47)
+  a2 : add2,                                  //W4D3 (0:47)
 
   a3 : function (n) {                          //W4D3 (0:49)
     this.total += n;
@@ -93,7 +92,7 @@ function add2(i, j) {                          //W4D3 (0:47)
   return i+j;
 }
 
-function main() {                               //W4D2 (1:47:)
+function main() {                                 //W4D2 (1:47:)
     console.log("Running main!");
     $("h1").css("background-color", "green");     //W4D2 (1:36:)
     $(".my-txt").css("background-color", "aqua"); //W4D2 (1:38:)
@@ -101,16 +100,17 @@ function main() {                               //W4D2 (1:47:)
     //$("p").removeClass("my-txt");            //W4D2 (2:23)
     $(".my-txt").css("color", "blue");         //W4D2 (2:26)
 
+    // "b1" disabled in HTML
     $("#b2").prop("disabled", true);            //W4D2 (2:29)
     $("#b5").prop("disabled", true);            //W4D2 (2:29)
-    $("#b5").prop("disabled", false);            //W4D2 (2:29)
+    $("#b5").prop("disabled", false);           //W4D2 (2:29)
 
     //$("p").remove();                          //W4D2 (2:36)
     $("p").after("<p> more text </p>");         //W4D3 (0:31)
     $("p").after("<p> Even more text </p>");    //W4D3 (0:31)
 
     //add listeners to buttons                  //W4D3 (0:32)
-    // $(".my-btn").click(function() {             //W4D3 v1 (0:38)
+    // $(".my-btn").click(function() {          //W4D3 v1 (0:38)
     //   console.log("My ID is: " + $(this).attr('id'));
     // })
     $(".my-btn").click(function(event) {        //W4D3 v2 (0:39)
