@@ -82,10 +82,10 @@ const o2 = {                                  //W4D3 (0:49)
   oadd : adder
 }
 
-
+//Doma tāda: funkc. var pielikt daž. obj-iem (piem.: myobj; o2)  //W4D3 (0:42)
 function adder(c){                            //W4D3 (0:42)
   this.total = this.a + this.b + c;
-  console.log("Total is", this.total);
+  console.log("Total is: ", this.total);
 } 
 
 function add2(i, j) {                          //W4D3 (0:47)
@@ -121,12 +121,10 @@ function main() {                                 //W4D2 (1:47:)
     })
 
     $(".my-btn").click(function(event) {        //W4D3 v2 (0:39)
-      console.log("My ID is: " + $(this).attr('id'));
-
+      console.log("My ID is: " + $(this).attr('id'), " /by (this).attr/");
       //we could use standart Javascript DOM api to get id
-      console.log("Target is: " +event.target.id);
-
-      console.log("Testing this ", this.id);     //W4D3 v3 (0:41)
+      console.log("Target is: " +event.target.id, " /by event/"); //W4D3(0:40)
+      console.log("Testing this ", this.id, " /by this/");     //W4D3 v3 (0:41)
     })
 
     myobj.add(20);       //const myobj = {       //W4D3 (0:42)(46)
@@ -135,12 +133,12 @@ function main() {                                 //W4D2 (1:47:)
 
   };
 
-main.a = 100;                                    //W4D3 (0:59)
+main.a = 100;   //skaidrojums:                   //W4D3 (0:59)
 main.b = 200;
 main.total = 0;
 main.add = adder;
 main.add(23);
 
-let a = [6, 9];                                  //W4D3 (1:02)
+let a = [6, 9];                                  //W4D3 (1:01)
 a.b = 10;
 console.log(a, a.b);
