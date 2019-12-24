@@ -94,6 +94,9 @@ function add2(i, j) {                          //W4D3 (0:47)
 
 function main() {                                 //W4D2 (1:47:)
     console.log("Running main!");
+    console.log("<p> quant.: " + document.querySelectorAll("p").length);   //W4D3 (0:31)
+    //quantity through Console is different
+
     $("h1").css("background-color", "green");     //W4D2 (1:36:)
     $(".my-txt").css("background-color", "aqua"); //W4D2 (1:38:)
 
@@ -105,14 +108,18 @@ function main() {                                 //W4D2 (1:47:)
     $("#b5").prop("disabled", true);            //W4D2 (2:29)
     $("#b5").prop("disabled", false);           //W4D2 (2:29)
 
-    //$("p").remove();                          //W4D2 (2:36)
+    // $("p").remove();                          //W4D2 (2:36)
+
+    // add <p>:
+    // $("p").after("tx <span> more text </span>");  //W4D3 (0:30)
     $("p").after("<p> more text </p>");         //W4D3 (0:31)
     $("p").after("<p> Even more text </p>");    //W4D3 (0:31)
 
-    //add listeners to buttons                  //W4D3 (0:32)
-    // $(".my-btn").click(function() {          //W4D3 v1 (0:38)
-    //   console.log("My ID is: " + $(this).attr('id'));
-    // })
+    //add listeners to buttons:                 //W4D3 (0:32)
+    $(".my-btn3").click(function() {            //W4D3 v1 (0:38)
+      console.log("My ID is: " + $(this).attr('id'));
+    })
+
     $(".my-btn").click(function(event) {        //W4D3 v2 (0:39)
       console.log("My ID is: " + $(this).attr('id'));
 
