@@ -63,7 +63,7 @@ user.sayHi();                                         //W4D3 (1:10)
 //user.arrfun();
 //================================================================================
 
-const myobj = {                               //W4D3 (0:42)
+const myobj = {                               //W4D3 (0:42)(46-skaidrojums)
   a : 2,
   b : 3,
   total : undefined,
@@ -84,6 +84,7 @@ const o2 = {                                  //W4D3 (0:49)
 }
 
 //Doma tāda: funkc. var pielikt daž. obj-iem (piem.: myobj; o2)  //W4D3 (0:42)
+//funkcija 'adder' izsaukta 3-jos veidos              //W4D3 (0:53)
 function adder(c){                            //W4D3 (0:42)
   this.total = this.a + this.b + c;
   console.log("Total is: ", this.total);
@@ -92,6 +93,12 @@ function adder(c){                            //W4D3 (0:42)
 function add2(i, j) {                          //W4D3 (0:47)
   return i+j;
 }
+
+//skat. beigaas izsauktus:
+//myobj.add(20);       //const myobj = {       //W4D3 (0:42)(46)
+//o2.oadd(50);         //const o2 = {          //W4D3 (0:49)(50)
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+//================================================================================
 
 function main() {                                 //W4D2 (1:47:)
     console.log("Running main!");
@@ -120,7 +127,6 @@ function main() {                                 //W4D2 (1:47:)
     $(".my-btn3").click(function() {            //W4D3 v1 (0:38)
       console.log("My ID is: " + $(this).attr('id'));
     })
-
     $(".my-btn").click(function(event) {        //W4D3 v2 (0:39)
       console.log("My ID is: " + $(this).attr('id'), " /by (this).attr/");
       //we could use standart Javascript DOM api to get id
@@ -131,7 +137,6 @@ function main() {                                 //W4D2 (1:47:)
     myobj.add(20);       //const myobj = {       //W4D3 (0:42)(46)
     o2.oadd(50);         //const o2 = {          //W4D3 (0:49)(50)
    
-
   };
 
 main.a = 100;   //skaidrojums:                   //W4D3 (0:59)
