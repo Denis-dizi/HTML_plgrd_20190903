@@ -37,30 +37,31 @@ jQuery mega funkcijai ($) esam iedevuši dokumentu;
 //run main only when document is ready                //W4D2 (1:47:)
 $(document).ready(main);
 
-let user = {                                          //W4D3 (1:10)(19)
+let user = {                                          //W4D3 (1:10)(1:19-ka lasit)
+  // https://javascript.info/object-methods
   name: "John",
   age: 30,
   //shorthand for adding function object. same as:
   //sayHi : function () { //do stuff
-  sayHi () {
+  sayHi () {                                         //W4D3 (1:18-ka lasit)
     // "this" is the "current object"
     //alert(this.name);
-    console.log("My name is", this.name);
+    console.log("My name is", this.name, "(by this)");
     //Without this is not as safe as user could have been changed
-    console.log("My name is", user.name);
+    console.log("My name is", user.name, "(by user)");
     
     //arrow function do not have their own this, they use their parents this
     const arrfun = () => {                            //W4D3 (1:15)(18)
       console.log("My a is:", this.a);
     }
     arrfun();
-},
+  },
 
-a : 3333
+  a : 3333                                            //W4D3 (1:11)
 };
-user.sayHi();
+user.sayHi();                                         //W4D3 (1:10)
 //user.arrfun();
-
+//================================================================================
 
 const myobj = {                               //W4D3 (0:42)
   a : 2,
